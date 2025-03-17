@@ -2,13 +2,17 @@ const app = Vue.createApp({
 	data() {
 		return {
 			yourAge: 'YOUR AGE',
-			yourAge5: " in 5 years",
+			yourAge5: " in 5 years is ",
 			favNum: 'Favorite Number: RANDOM NUMBER BETWEEN 0 AND 1',
+			yourAgeNow : 15,
 		};
 	},
 	methods: {
 		outputYourAge5() {
 			return this.yourAge + this.yourAge5
+		},
+		outputAge5YearsLater() {
+			return this.yourAge + this.yourAge5 + (this.yourAgeNow + 5)
 		},
 		outputGoal() {
 		}

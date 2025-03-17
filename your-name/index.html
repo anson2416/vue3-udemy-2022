@@ -16,8 +16,8 @@
     <h1>YOUR NAME</h1>
   </header>
   <section id="user-goal">
-    <h2>{{yourAge}}</h2>
-    <p>{{ outputYourAge5() }}</p>
+    <h2>{{yourAge}} <input type="number" v-model="yourAgeNow" placeholder="your age now"></h2>
+    <p>{{ outputAge5YearsLater() }}</p>
     <p>{{favNum}}</p>
   </section>
 </body>
