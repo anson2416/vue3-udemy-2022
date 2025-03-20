@@ -5,6 +5,8 @@ const app = Vue.createApp({
 			yourAge5: " in 5 years is ",
 			favNum: 'Favorite Number: RANDOM NUMBER BETWEEN 0 AND 1',
 			yourAgeNow : 15,
+			imageUrl: "images/black-cat.jpeg",
+			name: "Magic"
 		};
 	},
 	methods: {
@@ -15,6 +17,9 @@ const app = Vue.createApp({
 			return this.yourAge + this.yourAge5 + (this.yourAgeNow + 5)
 		},
 		outputGoal() {
+		},
+		outputRandomNum(){
+			return Math.random()
 		}
 	},
 });

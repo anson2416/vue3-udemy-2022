@@ -19,6 +19,11 @@
     <h2>{{yourAge}} <input type="number" v-model="yourAgeNow" placeholder="your age now"></h2>
     <p>{{ outputAge5YearsLater() }}</p>
     <p>{{favNum}}</p>
+    <p>{{outputRandomNum()}}</p>
+    <div>
+      <img v-bind:src="imageUrl" alt="black cat" srcset="">
+    </div>
+    <input type="text" name="inputYourName" id="inputYourName" v-bind:value="name">
   </section>
 </body>
 
