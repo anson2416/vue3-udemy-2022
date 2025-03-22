@@ -5,6 +5,12 @@ const app = Vue.createApp({
 		};
 	},
 	methods: {
+		addOne(){
+			this.result += 1;
+		},
+		deductOne(){
+			this.result -= 1;
+		},
 	},
 });
 

@@ -17,8 +17,9 @@
   </header>
   <section id="app">
     <h2>Event in Action</h2>
-    <button class="clsOperator" type="button">Add</button>
-    <button class="clsOperator">Remove</button>
+    <button class="clsOperator" type="button" v-on:click="addOne">Add</button>
+    <button class="clsOperator" type="button" @click="deductOne">Remove</button>
+    <button class="clsOperator" type="button" @click="result++">Add 1</button>
     <br><br>
     <button type="button" class="result-button">Result: {{result}}</button>
   </section>
