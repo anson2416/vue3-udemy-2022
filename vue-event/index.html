@@ -22,6 +22,13 @@
     <button class="clsOperator" type="button" @click="result++">Add 1</button>
     <br><br>
     <button type="button" class="result-button">Result: {{result}}</button>
+
+    <br><br>
+    <hr>
+    <p v-for="product in productList" :key="product.title">
+      <input type="checkbox">
+      <span>title:{{product.title}} - quantity:{{product.quantity}} - price:{{product.price}}</span>
+    </p>
   </section>
 </body>
 

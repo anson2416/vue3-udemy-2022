@@ -2,6 +2,12 @@ const app = Vue.createApp({
 	data() {
 		return {
 			result: 0,
+			productList:[
+				{title: 'A Book', quantity: 1, price: 9.99},
+				{title: 'A Carpet', quantity: 2, price: 99.99},
+				{title: 'A Pen', quantity: 3, price: 2.99},
+				{title: 'A Phone', quantity: 4, price: 999.99},
+			]
 		};
 	},
 	methods: {
