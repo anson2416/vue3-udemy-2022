@@ -18,7 +18,7 @@
   <section id="app">
     <h2>Event in Action</h2>
     <button class="clsOperator" type="button" v-on:click="addOne">Add</button>
-    <button class="clsOperator" type="button" @click="deductOne">Remove</button>
+    <button class="clsOperator" type="button" @click.right="deductOne">Remove</button>
     <button class="clsOperator" type="button" @click="result++">Add 1</button>
     <button class="clsOperator" type="button" v-on:click="add(3)">Add 3</button>
     <br><br>
@@ -35,8 +35,19 @@
       <span>title:{{product.title}} - quantity:{{product.quantity}} - price:{{product.price}}</span>
     </template>
     <hr>
-    <input type="text" v-on:input="setName($event, 'Schwarzmul')" placeholder="Enter your name">
+    <input type="text" v-on:input="setName($event, 'Schwarzmul')" v-on:keyup="confirmedInfo" placeholder="Enter your name">
     <p>Your name: {{ name }}</p>
+    <p>Your confirmed name: {{ confirmedName }}</p>
+    <hr>
+    <form action="" v-on:submit.prevent="submitForm">
+      <input type="text" v-model="name" placeholder="Enter your name">
+      <p>Your name: {{ name }}</p>
+      <input type="text" v-model="email" placeholder="Enter your email">
+      <p>Your email: {{ email }}</p>
+      <input type="text" v-model="password" placeholder="Enter your password">
+      <p>Your password: {{ password }}</p>
+      <button type="submit">Submit</button>
+    </form>
   </section>
 </body>
 
