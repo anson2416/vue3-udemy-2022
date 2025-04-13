@@ -13,16 +13,16 @@
         <div class="heading">欢迎加入我们的团队！</div>
         <h1 class="title">创建您的帐号</h1>
         <form class="formcontainer">
-            <div>
-                <label for="username">用户名</label>
+            <div style="display: flex; flex-direction: row; align-items: center; margin-bottom: 5px;">
+                <label for="username" style="margin-right: 10px; width: 100px;">用户名</label>
                 <input type="text" id="username" v-model="user.username" placeholder="请输入用户名">
             </div>
-            <div>
-                <label for="email">电子邮件</label>
+            <div style="display: flex; flex-direction: row; align-items: center; margin-bottom: 5px;">
+                <label for="email" style="margin-right: 10px; width: 100px;">电子邮件</label>
                 <input type="email" id="email" v-model="user.email" placeholder="请输入电子邮件">
             </div>
-            <div>
-                <label for="password">密码</label>
+            <div style="display: flex; flex-direction: row; align-items: center; margin-bottom: 5px;">
+                <label for="password" style="margin-right: 10px; width: 100px;">密码</label>
                 <input type="password" id="password" v-model="user.password" placeholder="请输入密码">
             </div>
             <button type="submit" class="btn">注册</button>
