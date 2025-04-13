@@ -32,7 +32,15 @@
             <input type="text" id="usersex" v-model="user1.usersex" placeholder="enter your sex">
         </div>
         <hr>
-
+        <div class="firstlastname">
+            <label for="firstname">First Name:</label>
+            <input type="text" name="firstname" id="lastname" v-model="firstname">
+            <label for="lastname">First Name:</label>
+            <input type="text" name="lastname" id="lastname" v-model="lastname">
+            <div>
+                <input type="text" v-model="fullname" placeholder="Enter your full name">
+            </div>
+        </div>
     </div>
     
     <script>
@@ -48,7 +56,9 @@
                         username:"Sam",
                         userage:30,
                         usersex:"man",
-                    }
+                    },
+                    firstname:"",
+                    lastname:"",
                 }
             },
             watch:{
@@ -75,7 +85,22 @@
                     console.log("method add2()...")
                     return this.b + this.number;   
                 },
-            }
+            },
+            computed:{
+                // fullname(value){
+                //     return this.firstname + " " + this.lastname;
+                // },
+                fullname:{
+                    get(){
+                        return this.firstname + " " + this.lastname;
+                    },
+                    set(value){
+                        this.firstname = value.split(" ")[0];
+                        this.lastname = value.split(" ")[1];
+                    },
+                }
+
+            },
         }).mount('#app');
     </script>
 </body>
