@@ -1,0 +1,125 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  background-color: #eee;
+  padding: 10px;
+  text-align: center;
+}
+
+.container .heading {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #615f5f;
+}
+
+.title{
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+.container p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+/* .container button { */
+.btn{
+    border-radius: 10px;
+    height: 40px;
+    width: 300px;
+    margin-top:30px;
+    background-color: lightseagreen;
+    border-color: darkred;
+    color:white;
+    /* padding: 10px 20px; */
+    font-size: 1rem;
+    /* background-color: #007bff; */
+    border: none;
+    cursor: pointer;
+}
+.container button:hover {
+    background-color: #0056b3;
+}
+.container .result {
+    margin-top: 20px;
+    font-size: 1.5rem;
+    color: #28a745;
+}
+.container .error {
+    color: #dc3545;
+}
+.container .loading {
+    font-size: 1.5rem;
+    color: #ffc107;
+}
+.container .loading::before {
+    content: 'Loading...';
+}
+.container .loading::after {
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 3px solid #007bff;
+    border-top-color: transparent;
+    animation: spin 1s linear infinite;
+}
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+.container .error::before {
+    content: 'Error: ';
+}
+
+.container .error::after {
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #dc3545;
+}
+.container .error::after {
+    animation: shake 0.5s;
+}
+@keyframes shake {
+    0% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(-5px);
+    }
+    50% {
+        transform: translateX(5px);
+    }
+    75% {
+        transform: translateX(-5px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.formcontainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* height: 100vh; */
+  background-color: #eee;
+  padding: 10px;
+  text-align: center;
+}

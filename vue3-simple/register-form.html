@@ -5,10 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>A Super Simple Vue3 Demo</title>
     <script src="https://unpkg.com/vue@3.5.13/dist/vue.global.js" ></script>
+    <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-    <div id="app">
-        <div>{{message}}</div>
+    <div id="app" class="container">
+
+        <div class="heading">欢迎加入我们的团队！</div>
+        <h1 class="title">创建您的帐号</h1>
+        <form class="formcontainer">
+            <div>
+                <label for="username">用户名</label>
+                <input type="text" id="username" v-model="user.username" placeholder="请输入用户名">
+            </div>
+            <div>
+                <label for="email">电子邮件</label>
+                <input type="email" id="email" v-model="user.email" placeholder="请输入电子邮件">
+            </div>
+            <div>
+                <label for="password">密码</label>
+                <input type="password" id="password" v-model="user.password" placeholder="请输入密码">
+            </div>
+            <button type="submit" class="btn">注册</button>
+        </form>
+
+        <div class="aggrement">
+            <input type="checkbox" id="checkbox" class="checkbox" v-model="user.aggrement">
+            <label for="checkbox" class="label">我同意条款和条件</label>
+        </div>
+        <hr>
+        <div>
+            <h3>注册信息</h3>
+            <p>用户名: {{ user.username }}</p>
+            <p>电子邮件: {{ user.email }}</p>
+            <p>密码: {{ user.password }}</p>    
+        </div>  
     </div>
     
     <script>
@@ -16,6 +46,12 @@
             data() {
                 return {
                     message: 'Hello Vue 3!',
+                    user:{
+                        username:"",
+                        email:"",
+                        password:"",
+                        aggrement:false,
+                    }
                 }
             },
             watch:{
