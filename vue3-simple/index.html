@@ -18,7 +18,21 @@
             <p>b+num = {{add2()}}</p>
         </div>
         <hr>
+        <div>
+            <div>watch an variable</div>
         Watch api: <input type="text" v-model="watchText" placeholder="enter a number">
+        </div>
+        <div>
+            <div>watch an object</div>
+            <label for="username" class="for">user's name</label>
+            <input type="text" id="username" v-model="user1.username" placeholder="enter your name">
+            <label for="userage" class="for">user's age</label>
+            <input type="text" id="userage" v-model="user1.userage" placeholder="enter your age">
+            <label for="usersex" class="for">user's age</label>
+            <input type="text" id="usersex" v-model="user1.usersex" placeholder="enter your sex">
+        </div>
+        <hr>
+
     </div>
     
     <script>
@@ -30,12 +44,27 @@
                     b:0,
                     number:30,
                     watchText:"",
+                    user1:{
+                        username:"Sam",
+                        userage:30,
+                        usersex:"man",
+                    }
                 }
             },
             watch:{
                 watchText(newValue, oldValue) {
                     console.log("watchText changed from " + oldValue + " to " + newValue);
-                }
+                },
+                user1:{
+                    handler(newValue, oldValue) {
+                        console.log("user1 changed. New value: " + JSON.stringify(newValue) + ", Old value: " + JSON.stringify(oldValue));
+                        // The oldValue and newValue are the same when deep: true because Vue doesn't create a completely new object for oldValue.
+                        // Instead, it points to the same object in memory.  When a property within user1 changes, both newValue and oldValue reflect that change by the time the handler is called.
+                        // To capture the *actual* old value before the change, you would need to make a deep copy of the object *before* the change occurs.  However, the watch handler doesn't provide a mechanism for that.
+                        // The practical implication is that with deep: true, you're primarily reacting to *any* change within the object, rather than comparing the object before and after.
+                    },
+                    deep:true,
+                },
             },
             methods:{
                 add1() {
