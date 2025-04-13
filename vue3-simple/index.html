@@ -8,7 +8,15 @@
 </head>
 <body>
     <div id="app">
-        {{ message }}
+        <div>{{message}}</div>
+        <div>
+        <button  @click="add1">a+number</button>
+        <button  @click="add2">b+number</button>
+        <p>a={{a}} b={{b}}</p>
+        <p>Sum of a and b is: {{ a + b }}</p>
+        <p>a+num = {{add1()}}</p>
+        <p>b+num = {{add2()}}</p>
+        </div>
     </div>
     
     <script>
@@ -16,7 +24,20 @@
             data() {
                 return {
                     message: 'Hello Vue 3!',
+                    a:0,
+                    b:0,
+                    number:30,
                 }
+            },
+            methods:{
+                add1() {
+                    console.log("method add1()...")
+                    return this.a + this.number;   
+                },
+                add2() {
+                    console.log("method add2()...")
+                    return this.b + this.number;   
+                },
             }
         }).mount('#app');
     </script>
