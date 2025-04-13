@@ -10,13 +10,15 @@
     <div id="app">
         <div>{{message}}</div>
         <div>
-        <button  @click="add1">a+number</button>
-        <button  @click="add2">b+number</button>
-        <p>a={{a}} b={{b}}</p>
-        <p>Sum of a and b is: {{ a + b }}</p>
-        <p>a+num = {{add1()}}</p>
-        <p>b+num = {{add2()}}</p>
+            <button  @click="add1">a+number</button>
+            <button  @click="add2">b+number</button>
+            <p>a={{a}} b={{b}}</p>
+            <p>Sum of a and b is: {{ a + b }}</p>
+            <p>a+num = {{add1()}}</p>
+            <p>b+num = {{add2()}}</p>
         </div>
+        <hr>
+        Watch api: <input type="text" v-model="watchText" placeholder="enter a number">
     </div>
     
     <script>
@@ -27,6 +29,12 @@
                     a:0,
                     b:0,
                     number:30,
+                    watchText:"",
+                }
+            },
+            watch:{
+                watchText(newValue, oldValue) {
+                    console.log("watchText changed from " + oldValue + " to " + newValue);
                 }
             },
             methods:{
