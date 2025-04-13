@@ -4,7 +4,24 @@ const app = Vue.createApp({
 			output: '',
 			confirmedOutput: '',
 			name:'',
+			fullname : '',
+			previousFullname :'',
 		};
+	},
+	watch: {
+		// output(value) {
+		// 	if (value === '') {
+		// 		this.confirmedOutput = '';
+		// 	}
+		// },
+		name(value, preValue) {
+			if (value === '') {
+				this.fullname = '';
+			} else {
+				this.fullname = value + ' Smith';
+				this.previousFullname = preValue;
+			}
+		},
 	},
 	methods: {
 		showAlert() {
@@ -20,13 +37,13 @@ const app = Vue.createApp({
 		},
 	},
 	computed:{
-		fullname() {
-			console.log('Computing fullname...');
-			if (this.name === '') {
-				return '';
-			}
-			return this.name + ' ' + 'Smith';
-		}
+		// fullname() {
+		// 	console.log('Computing fullname...');
+		// 	if (this.name === '') {
+		// 		return '';
+		// 	}
+		// 	return this.name + ' ' + 'Smith';
+		// }
 
 	},
 });
