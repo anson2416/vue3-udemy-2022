@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reactivity in Action</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;700&display=swap" rel="stylesheet" />
+
+  <script src="https://unpkg.com/vue@3.5.13/dist/vue.global.js" defer></script>
+  <script src="app.js" defer></script>
+    
+</head>
+<body>
+    <div id="app" class="container">
+        <div class="title">{{title}}</div>
+        <div class="result-container">
+            <div class="btn-group">
+            <button class="btn" @click="add(5)">Add 5</button>
+            <button class="btn" @click="add(1)">Add 1</button>
+            </div>
+            <div class="result">Result: {{result}}</div>
+        </div>
+
+    </div>
+</body>
+</html>
