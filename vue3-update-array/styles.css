@@ -4,6 +4,8 @@
     padding: 0;
 }
 
+
+
 .fruit-list-container {
   max-width: 600px;
   margin: 40px auto;
@@ -13,6 +15,70 @@
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
 }
 
+/* 添加水果部分样式 */
+.add-fruit {
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.add-fruit h4 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 16px;
+  letter-spacing: 0.5px;
+}
+
+.input-group {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  align-items: center;
+}
+
+.fruit-input {
+  width: 70%;
+  padding: 12px 16px;
+  font-size: 16px;
+  color: #333;
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.fruit-input:focus {
+  border-color: #6b7280;
+  box-shadow: 0 0 8px rgba(107, 114, 128, 0.2);
+}
+
+.fruit-input::placeholder {
+  color: #a0aec0;
+}
+
+.add-btn {
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #ffffff;
+  background: #48bb78;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.add-btn:hover {
+  background: #38a169;
+  transform: translateY(-2px);
+}
+
+.add-btn:active {
+  transform: translateY(0);
+}
+
+/* 水果列表部分样式 */
 .fruit-list {
   list-style: none;
   padding: 0;
