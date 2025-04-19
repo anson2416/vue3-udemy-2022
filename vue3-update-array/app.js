@@ -1,12 +1,16 @@
 const app = Vue.createApp({
 	data() {
 		return {
-			message: 'Hello Vue3!',
-			
+			message: 'Reactivity in Action',
 		};
 	},
-	methods: {		
+	methods: {
 	},
+	computed:{
+	},
+	watch:{
+		
+	}
 });
 
 app.mount('#app');
