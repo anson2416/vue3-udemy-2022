@@ -13,6 +13,23 @@
 <body>
     <div id="app" class="container">
         <h1>{{message}}</h1>
+        <hr>
+        <div class="fruit-container">
+            <h2>本月需要采购的水果：</h2>
+            <div class="fruit-list-container">
+                <ul>
+                    <li v-for="(fruit, index) in fruits" :key="index" class="fruit-list">
+                        <span class="fruit-name">{{ fruit }}</span>
+                        <button class="remove-btn" @click="removeFruit(index)">删除</button>
+                    </li>
+                </ul>
+            </div>
+            <div class="add-fruit">
+                <h4>想添加水果？</h4>
+                <input type="text" v-model="newFruit" placeholder="请输入水果名称">
+                <button @click="addFruit">添加</button>
+            </div>
+        </div>
     </div>
 </body>
 </html>
