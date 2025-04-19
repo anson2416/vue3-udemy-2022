@@ -19,6 +19,13 @@ const app = Vue.createApp({
 		}
 	},
 	computed:{
+		filter_numbers(){
+			return this.numbers.filter((number) => {
+				return number > 6;
+			}
+			);
+		}
+		
 	},
 	watch:{
 		

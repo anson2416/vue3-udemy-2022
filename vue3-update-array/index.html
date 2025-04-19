@@ -40,6 +40,21 @@
                 </li>
             </ul>
         </div>
+
+
+        <hr>
+        <div class="fruit-list-container">
+            <div>
+                <div>Less then 6 numbers:</div>
+                <ul>
+                    <li v-for="(num, index) in filter_numbers" :key="index">
+                        {{ num }}
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+
     </div>
 </body>
 
