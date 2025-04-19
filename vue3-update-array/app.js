@@ -13,6 +13,10 @@ const app = Vue.createApp({
 				return;
 			}	
 			this.fruits.push(this.newFruit);
+			this.newFruit = '';
+		},
+		removeFruit(index){
+			this.fruits.splice(index, 1);
 		}
 	},
 	computed:{
