@@ -16,6 +16,8 @@
        <table>
             <thead>
                 <tr>
+                    <th></th>
+                    <th></th>
                     <th>Product</th>
                     <th>Price</th>
                     <th>Quantity</th>
@@ -29,7 +31,7 @@
                     <td>{{ item.title }}</td>
                     <td>{{ item.price }} 元/斤</td>
                     <td>{{ item.quantity }}</td>
-                    <td>{{ item.price * item.quantity | formatPrice }}</td>
+                    <td>{{ item.price * item.quantity  }}</td>
                 </tr>
             </tbody>
             <tfoot>
@@ -37,9 +39,10 @@
                     <td colspan="6">Total</td>
                     <td></td>
                     <td></td>
-                    <td>{{ totalQuantity | formatPrice }}</td>
-                    <td></td>
-                    <td>{{ totalPrice | formatPrice }}</td>
+                    <!-- <td>{{ totalQuantity }}</td> -->
+                    <td>{{formatTotalQuantity}}</td>
+                    <!-- <td>{{ totalPrice }}</td> -->
+                    <td>{{ formatTotalPrice }}</td>
                 </tr>
             </tfoot>
        </table> 

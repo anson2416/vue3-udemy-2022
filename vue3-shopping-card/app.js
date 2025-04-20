@@ -43,6 +43,9 @@ const app = Vue.createApp({
 			});
 			return total;
 		},
+		formatTotalQuantity(){
+			return this.totalQuantity + '件';
+		},
 		totalPrice() {
 			let total = 0;
 			this.cardList.forEach(item => {
@@ -52,39 +55,24 @@ const app = Vue.createApp({
 			});
 			return total;
 		},
-		formatPrice(value) {
-			return (value) => {
-				if (!value) {
-					return '0.00元';
-				}
-				const formattedValue = new Intl.NumberFormat('zh-CN', {
-					style: 'currency',
-					currency: 'CNY',
-					minimumFractionDigits: 2,
-					maximumFractionDigits: 2,
-				}).format(value);
-				return formattedValue
-			}
-		}
-	},
-	watch:{
-	},
-	filters:{
-		formatPrice(value){
-			if (!value) {
-				return '0.00元';
-			}
+		formatTotalPrice() {
 			// return value.toFixed(2) + '元';
 			const formattedValue = new Intl.NumberFormat('zh-CN', {
 				style: 'currency',
 				currency: 'CNY',
 				minimumFractionDigits: 2,
 				maximumFractionDigits: 2,
-			}).format(value);
+			}).format(this.totalPrice);
 			// return formattedValue.replace('元', ''); // 去掉“元”字
 			console.log(formattedValue)
 			return formattedValue
-		}
+		},
+
+
+	},
+	watch:{
+	},
+	filters:{
 	},
 });
 
