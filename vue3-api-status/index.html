@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Status</title>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://unpkg.com/vue@3.5.13/dist/vue.global.js" defer></script>
+    <script src="app.js" defer></script>
+</head>
+<body>
+    <div id="app" class="container">
+        <h1>API Status</h1>
+        <div class="filters">
+            <select v-model="selectedMarket">
+                <option value="">All Markets</option>
+                <option value="Market A">Market A</option>
+                <option value="Market B">Market B</option>
+                <option value="Market C">Market C</option>
+            </select>
+            <input type="text" v-model="search" placeholder="Search API Name">
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Market</th>
+                    <th>API Name</th>
+                    <th>API Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for="api in filteredApis" :key="api.apiName">
+                    <td>{{ api.market }}</td>
+                    <td>{{ api.apiName }}</td>
+                    <td>{{ api.status }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
