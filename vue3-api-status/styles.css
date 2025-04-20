@@ -6,40 +6,104 @@
 
 body {
     font-family: 'Jost', sans-serif;
+    background-color: #f4f7f6;
+    color: #333;
+    line-height: 1.6;
 }
 
 .container {
-    width: 80%;
+    max-width: 960px;
     margin: 2rem auto;
-    padding: 20px;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+}
+
+.filters {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    gap: 1rem; /* Add gap between filter elements */
+}
+
+input[type="text"],
+select {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus,
+select:focus {
+    outline: none;
+    border-color: #42b983;
+    box-shadow: 0 0 0 2px rgba(66, 185, 131, 0.2);
+}
+
+input[type="text"] {
+    flex-grow: 1; /* Allow input to take remaining space */
+}
+
+select {
+    min-width: 150px; /* Ensure select has a minimum width */
+    cursor: pointer;
 }
 
 table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 }
 
 th, td {
-    border: 1px solid #ddd;
-    padding: 8px;
+    border: 1px solid #e0e0e0;
+    padding: 12px 15px;
     text-align: left;
 }
 
 th {
-    background-color: #f2f2f2;
+    background-color: #42b983; /* Vue green */
+    color: #fff;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
-input[type="text"] {
-    width: 65%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ddd;
+tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
 }
 
-select {
-    width: 20%;
-    padding: 10px;
-    border: 1px solid #ddd;
-    margin-right: 10px;
+tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Status styling */
+td:last-child {
+    font-weight: bold;
+    text-align: center;
+}
+
+.status-online {
+    color: #2ecc71; /* Green */
+}
+
+.status-offline {
+    color: #e74c3c; /* Red */
+}
+
+/* Add a class for the status cell to apply specific styles */
+.status-cell {
+    /* You can add more specific styles here if needed */
 }

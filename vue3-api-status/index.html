@@ -34,7 +34,9 @@
                 <tr v-for="api in filteredApis" :key="api.apiName">
                     <td>{{ api.market }}</td>
                     <td>{{ api.apiName }}</td>
-                    <td>{{ api.status }}</td>
+                    <td :class="['status-cell', api.status === 'Online' ? 'status-online' : 'status-offline']">
+                        {{ api.status }}
+                    </td>
                 </tr>
             </tbody>
         </table>
