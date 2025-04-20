@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="styles.css">
     <script src="https://unpkg.com/vue@3.5.13/dist/vue.global.js" defer></script>
     <script src="app.js" defer></script>
-    
 </head>
 <body>
     <div id="app" class="container" v-cloak>
@@ -29,9 +28,10 @@
                     <td><input type="checkbox" name="selectItem" id="selectItem" v-model="item.check"></td>
                     <td><img :src="item.imgUrl" alt="" ></td>
                     <td>{{ item.title }}</td>
-                    <td>{{ item.price }} 元/斤</td>
+                    <td>{{ item.price }} {{currency}}/斤</td>
                     <td>{{ item.quantity }}</td>
-                    <td>{{ item.price * item.quantity  }}</td>
+                    <!-- <td>{{ item.price * item.quantity  }}</td> -->
+                    <td>{{ formatItemPrice(item) }}</td>
                 </tr>
             </tbody>
             <tfoot>

@@ -59,7 +59,7 @@ const app = Vue.createApp({
 			// return value.toFixed(2) + '元';
 			const formattedValue = new Intl.NumberFormat('zh-CN', {
 				style: 'currency',
-				currency: 'CNY',
+				currency: this.currency,
 				minimumFractionDigits: 2,
 				maximumFractionDigits: 2,
 			}).format(this.totalPrice);
@@ -74,6 +74,11 @@ const app = Vue.createApp({
 	},
 	filters:{
 	},
+	methods: {
+		formatItemPrice(item) {
+			return (item.price * item.quantity).toLocaleString('zh-CN', { style: 'currency', currency: 'RMB', minimumFractionDigits: 2, maximumFractionDigits: 2 });
+		}
+	}
 });
 
 app.mount('#app');
