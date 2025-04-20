@@ -78,7 +78,16 @@ const app = Vue.createApp({
 		formatItemPrice(item) {
 			return (item.price * item.quantity).toLocaleString('zh-CN', { style: 'currency', currency: 'RMB', minimumFractionDigits: 2, maximumFractionDigits: 2 });
 		}
-	}
+	},
+	directives: {
+		focus: {
+			// When the element is mounted to the DOM
+			mounted(el) {
+				el.focus();
+			},
+		},
+	},
+
 });
 
 app.mount('#app');
