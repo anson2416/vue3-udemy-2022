@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue3 Study</title>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://unpkg.com/vue@3.5.13/dist/vue.global.js" defer></script>
+    <script src="app.js" defer></script>
+    
+</head>
+<body>
+    <div id="app" class="container" v-cloak>
+        <div class="top">{{title}}</div>
+       <table>
+            <thead>
+                <tr>
+                    <th>Product</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for="(item, index) in cardList" :key="index">
+                    <td><input type="checkbox" name="selectItem" id="selectItem" v-model="item.check"></td>
+                    <td><img :src="item.imgUrl" alt="" ></td>
+                    <td>{{ item.title }}</td>
+                    <td>{{ item.price }} 元/斤</td>
+                    <td>{{ item.quantity }}</td>
+                    <td>{{ item.price * item.quantity | formatPrice }}</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="6">Total</td>
+                    <td></td>
+                    <td></td>
+                    <td>{{ totalQuantity | formatPrice }}</td>
+                    <td></td>
+                    <td>{{ totalPrice | formatPrice }}</td>
+                </tr>
+            </tfoot>
+       </table> 
+    </div>
+</body>
+</html>

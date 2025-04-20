@@ -1,0 +1,91 @@
+const app = Vue.createApp({
+	data() {
+		return {
+			title: '网上商城购物车',
+			currency: 'RMB',
+			cardList:[
+				{
+					id:1,
+					imgUrl:"images/apple.svg",
+					title:'苹果',
+					price: 6,
+					quantity:1,
+					check:false,
+				},
+				{
+					id:2,
+					imgUrl:"images/watermelon.svg",
+					title:'西瓜',
+					price: 2,
+					quantity:2,
+					check: true,
+				},
+				{
+					id:3,
+					imgUrl:"images/grape.svg",
+					title:'葡萄',
+					price: 8,
+					quantity:3,
+					check:false,
+				},
+			]
+		};
+	},
+	methods: {
+	},
+	computed: {
+		totalQuantity() {
+			let total = 0;
+			this.cardList.forEach(item => {
+				if (item.check) {
+					total += item.quantity;
+				}
+			});
+			return total;
+		},
+		totalPrice() {
+			let total = 0;
+			this.cardList.forEach(item => {
+				if (item.check) {
+					total += item.price * item.quantity;
+				}
+			});
+			return total;
+		},
+		formatPrice(value) {
+			return (value) => {
+				if (!value) {
+					return '0.00元';
+				}
+				const formattedValue = new Intl.NumberFormat('zh-CN', {
+					style: 'currency',
+					currency: 'CNY',
+					minimumFractionDigits: 2,
+					maximumFractionDigits: 2,
+				}).format(value);
+				return formattedValue
+			}
+		}
+	},
+	watch:{
+	},
+	filters:{
+		formatPrice(value){
+			if (!value) {
+				return '0.00元';
+			}
+			// return value.toFixed(2) + '元';
+			const formattedValue = new Intl.NumberFormat('zh-CN', {
+				style: 'currency',
+				currency: 'CNY',
+				minimumFractionDigits: 2,
+				maximumFractionDigits: 2,
+			}).format(value);
+			// return formattedValue.replace('元', ''); // 去掉“元”字
+			console.log(formattedValue)
+			return formattedValue
+		}
+	},
+});
+
+app.mount('#app');
