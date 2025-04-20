@@ -29,7 +29,13 @@
                     <td><img :src="item.imgUrl" alt="" ></td>
                     <td>{{ item.title }}</td>
                     <td>{{ item.price }} {{currency}}/斤</td>
-                    <td>{{ item.quantity }}</td>
+                    <div>
+                        <td>
+                            <button class='btnIncQuantity' @click="item.quantity--" :disabled="item.quantity <= 1">-</button>
+                            <span>{{ item.quantity }}</span>
+                            <button class='btnIncQuantity' @click="item.quantity++">+</button>
+                        </td> 
+                    </div>
                     <!-- <td>{{ item.price * item.quantity  }}</td> -->
                     <td>{{ formatItemPrice(item) }}</td>
                 </tr>
