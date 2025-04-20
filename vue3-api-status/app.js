@@ -4,11 +4,12 @@ const app = Vue.createApp({
             search: '',
             selectedMarket: '',
             apis: [
-                { market: 'Market A', apiName: 'API 1', status: 'Online' },
-                { market: 'Market B', apiName: 'API 2', status: 'Offline' },
-                { market: 'Market C', apiName: 'API 3', status: 'Online' },
-                { market: 'Market A', apiName: 'API 4', status: 'Online' },
-                { market: 'Market B', apiName: 'API 5', status: 'Offline' }
+                { market: 'MYH', apiName: 'API 1', status: 'Online' },
+                { market: 'SGH', apiName: 'API 2', status: 'Offline' },
+                { market: 'IMO', apiName: 'API 3', status: 'Online' },
+                { market: 'MYH', apiName: 'API 4', status: 'Online' },
+                { market: 'IMN', apiName: 'API 5', status: 'Offline' },
+                { market: 'SGH', apiName: 'API 22', status: 'Offline' },
             ]
         };
     },

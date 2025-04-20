@@ -31,20 +31,15 @@ th {
 }
 
 input[type="text"] {
-    width: 60%;
+    width: 65%;
     padding: 10px;
     margin-bottom: 10px;
     border: 1px solid #ddd;
-}
-
-.filters {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 10px;
 }
 
 select {
-    width: 30%;
+    width: 20%;
     padding: 10px;
     border: 1px solid #ddd;
+    margin-right: 10px;
 }
